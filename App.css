@@ -1,0 +1,194 @@
+/* Existing styles */
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* New enhanced styles */
+.container {
+  width: 90%;
+  margin: auto;
+  max-width: 1200px;
+  padding: 20px;
+}
+h1,form {
+  text-align: center;
+}
+.animated-square {
+  width: 150px;
+  height: 150px;
+  background: url(12.jpg) no-repeat center center;
+  background-size: cover; 
+  margin: 20px auto;
+  border: 10px solid;
+  border-image: linear-gradient(45deg, #000000, #2600ff, #000000, #2f00ff) 1;
+  border-radius: 6px;
+  animation: borderAnimation 4s infinite linear;
+}
+
+
+@keyframes borderAnimation {
+  0% {
+    border-image-source: linear-gradient(45deg, #2600ff, #000000, #1100ff, #000000);
+  }
+  50% {
+    border-image-source: linear-gradient(45deg, #000000, #2f00ff, #000000, #0004ff);
+  }
+  100% {
+    border-image-source: linear-gradient(45deg, #1100ff, #000a0a, #0004ff, #000000);
+  }
+}
+
+
+h1 {
+  color: #ffffff;
+  margin-bottom: 20px;
+  
+}
+h2 {
+  color: #ffffff;
+  
+} 
+
+/* Form Styling */
+.form-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+input, select {
+  padding: 10px;
+  border: 1px solid rgb(65, 57, 57)#000000;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+
+
+button {
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: 0.3s ease-in-out;
+  color: #f0f1f5;
+  background-color: #565f70;
+}
+
+.add-btn {
+  background-color: green;
+  color: white;
+}
+
+.edit-btn {
+  background-color: blue;
+  color: white;
+}
+
+.delete-btn {
+  background-color: red;
+  color: white;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+/* Table Styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: rgb(231, 243, 248);
+  border-radius: 10px;
+}
+
+th, td {
+  border: 1px solid rgb(65, 57, 57);
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background-color: #0f0546;
+  color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .form-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  input, select {
+    width: 100%;
+  }
+}
+
+/* Edit Popup */
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 500px;
+  background: white;
+  padding: 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
